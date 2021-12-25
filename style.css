@@ -47,6 +47,9 @@ input {
   outline: none;
   background-color: #fff;
 }
+input::placeholder {
+  opacity: 0.5;
+}
 ul,
 ol {
   list-style: none;
@@ -121,6 +124,7 @@ a {
   background-repeat: no-repeat;
   background-position: 115%;
   margin-top: 5rem;
+  margin-bottom: 15rem;
 }
 .wrapper-started {
   width: 80%;
@@ -155,7 +159,138 @@ a {
   font-weight: 700;
   margin-top: 3rem;
 }
+/* *main */
+.main {
+  width: 100%;
+  background-color: var(--light-color);
+  margin: 0 auto;
+}
+.wrapper-main {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+}
+.box-input {
+  width: 100%;
+  background-color: #3a3054;
+  background-image: url(./images/bg-shorten-desktop.svg);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: -7.8rem;
+}
+#input {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 1rem;
+  font-size: 2rem;
+  line-height: 3.6rem;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  padding: 1rem 3rem;
+  margin-right: 3rem;
+}
+#btn {
+  width: 20%;
+  background-color: var(--green);
+  color: #fff;
+  padding: 1.3rem 0;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 700;
+  border-radius: 1rem;
+}
+.advanced-static {
+  width: 100%;
+  margin: 20rem 0 10rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.advanced-static > h2 {
+  font-size: 4rem;
+  line-height: 4.8rem;
+  font-weight: 700;
+  color: var(--main-color);
+  letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+}
+.advanced-static > p {
+  width: 50rem;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  font-weight: 500;
+  color: var(--color);
+  text-align: center;
+}
+.items {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 0;
+  position: relative;
+}
+.items::before {
+  content: "";
+  height: 8px;
+  width: 100%;
+  background-color: var(--green);
+  position: absolute;
+  top: calc(55%);
+  right: 0;
+  left: 0;
+}
+.box-item {
+  width: 35rem;
+  height: 31rem;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 3rem;
+  position: relative;
+}
+.box-icon {
+  position: absolute;
+  top: -4.4rem;
+  width: 8.8rem;
+  height: 8.8rem;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.middle {
+  margin-top: 8.8rem;
+}
+.bottom {
+  margin-top: 17.6rem;
+}
+.box-item > h3 {
+  font-size: 2.2rem;
+  line-height: 3.3rem;
+  color: var(--main-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 7rem;
+}
+.box-item > p {
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+  color: var(--color);
+  font-weight: 500;
+}
 
+/* challange */
 .attribution a {
   color: hsl(228, 45%, 44%);
   text-decoration: underline;

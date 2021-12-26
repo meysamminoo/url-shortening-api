@@ -323,6 +323,7 @@ a {
   border-radius: 2.8rem;
   padding: 1.5rem 3rem;
   font-weight: 700;
+  cursor: pointer;
 }
 .wrapper-footer {
   width: 80%;
@@ -342,8 +343,33 @@ a {
   flex-direction: row;
   justify-content: space-between;
 }
+.nav > h4 {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+.nav > ul > li > a {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  font-weight: 500;
+  color: #bfbfbf;
+}
+.social img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 3rem;
+}
 /* challange */
+.attribution {
+  width: 80%;
+  border-top: 1px solid #ccc;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding-top: 2rem;
+  color: #fff;
+}
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--green);
   text-decoration: underline;
 }

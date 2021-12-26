@@ -228,9 +228,52 @@ a {
 #btn:hover {
   background-color: #9ae3e3;
 }
+.short-links {
+  width: 100%;
+  margin-top: 10rem;
+}
+.box-short-link {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 5px;
+  color: var(--main-color);
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 3.6rem;
+  margin-bottom: 2rem;
+}
+.short-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.short-address {
+  color: var(--green);
+}
+.btn-copy {
+  background-color: var(--green);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  font-weight: 700;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  margin-left: 3rem;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.btn-copy:hover {
+  background-color: #9ae3e3;
+}
 .advanced-static {
   width: 100%;
-  margin: 20rem 0 10rem 0;
+  margin: 10rem 0 10rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;

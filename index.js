@@ -23,7 +23,6 @@ hambergerIcon.addEventListener("click", function () {
 btn.addEventListener("click", function () {
   var expression =
     /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-
   if (input.value === "") {
     errorInput.style.display = "block";
     input.style.border = "3px solid #f46363";
@@ -39,6 +38,7 @@ btn.addEventListener("click", function () {
 });
 document.addEventListener("DOMContentLoaded", getUrls);
 
+// * functions
 function shortLink(link) {
   axios.get(`https://api.shrtco.de/v2/shorten?url=${link}`).then((res) => {
     const boxShortLink = document.createElement("div");
@@ -86,7 +86,7 @@ function saveLocalUrl(url) {
   localStorage.setItem("urls", JSON.stringify(urls));
 }
 
-// todo:
+// todo: get urls from local storage after reload browser
 function getUrls() {
   let urls;
   if (localStorage.getItem("urls") === null) {

@@ -37,6 +37,7 @@ btn.addEventListener("click", function () {
     input.value = "";
   }
 });
+document.addEventListener("DOMContentLoaded", getUrls);
 
 function shortLink(link) {
   axios.get(`https://api.shrtco.de/v2/shorten?url=${link}`).then((res) => {
@@ -57,6 +58,11 @@ function shortLink(link) {
     mainUrl.innerText = link;
     shortUrl.innerText = res.data.result.full_short_link;
     shortLinks.appendChild(boxShortLink);
+    // save local URL
+    saveLocalUrl({
+      main: link,
+      short: res.data.result.full_short_link,
+    });
     // todo: copy short link to clipboard
     buttonCopy.addEventListener("click", clipboardCopy);
     async function clipboardCopy() {
@@ -68,4 +74,52 @@ function shortLink(link) {
   });
 }
 
-// function clipboardCopy() {}
+// todo: save urls in local storage
+function saveLocalUrl(url) {
+  let urls;
+  if (localStorage.getItem("urls") === null) {
+    urls = [];
+  } else {
+    urls = JSON.parse(localStorage.getItem("urls"));
+  }
+  urls.push(url);
+  localStorage.setItem("urls", JSON.stringify(urls));
+}
+
+// todo:
+function getUrls() {
+  let urls;
+  if (localStorage.getItem("urls") === null) {
+    urls = [];
+  } else {
+    urls = JSON.parse(localStorage.getItem("urls"));
+  }
+  urls.forEach((url) => {
+    const boxShortLink = document.createElement("div");
+    boxShortLink.classList.add("box-short-link");
+    const mainUrl = document.createElement("p");
+    boxShortLink.appendChild(mainUrl);
+    const shortLink = document.createElement("div");
+    shortLink.classList.add("short-link");
+    boxShortLink.appendChild(shortLink);
+    const shortUrl = document.createElement("p");
+    shortUrl.classList.add("short-address");
+    const buttonCopy = document.createElement("button");
+    buttonCopy.innerText = "Copy";
+    buttonCopy.classList.add("btn-copy");
+    shortLink.appendChild(shortUrl);
+    shortLink.appendChild(buttonCopy);
+    mainUrl.innerText = url.main;
+    shortUrl.innerText = url.short;
+    shortLinks.appendChild(boxShortLink);
+
+    // todo: copy short link to clipboard
+    buttonCopy.addEventListener("click", clipboardCopy);
+    async function clipboardCopy() {
+      let text = shortUrl.innerText;
+      await navigator.clipboard.writeText(text);
+      buttonCopy.classList.add("copied");
+      buttonCopy.innerText = "Copied!";
+    }
+  });
+}

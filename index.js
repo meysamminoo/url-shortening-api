@@ -48,8 +48,16 @@ function shortLink(link) {
     buttonCopy.classList.add("btn-copy");
     shortLink.appendChild(shortUrl);
     shortLink.appendChild(buttonCopy);
-    shortLinks.appendChild(boxShortLink);
     mainUrl.innerText = link;
     shortUrl.innerText = res.data.result.short_link;
+    shortLinks.appendChild(boxShortLink);
+    // todo: copy short link to clipboard
+    buttonCopy.addEventListener("click", clipboardCopy);
+    async function clipboardCopy() {
+      let text = shortUrl.innerText;
+      await navigator.clipboard.writeText(text);
+    }
   });
 }
+
+// function clipboardCopy() {}

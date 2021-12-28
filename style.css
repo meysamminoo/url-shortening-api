@@ -361,6 +361,9 @@ a {
 .btn-copy:hover {
   background-color: #9ae3e3;
 }
+.copied {
+  background-color: #3a3054;
+}
 .advanced-static {
   width: 100%;
   margin: 10rem 0 10rem 0;

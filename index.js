@@ -21,7 +21,13 @@ hambergerIcon.addEventListener("click", function () {
 });
 
 btn.addEventListener("click", function () {
+  var expression =
+    /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+
   if (input.value === "") {
+    errorInput.style.display = "block";
+    input.style.border = "3px solid #f46363";
+  } else if (!input.value.match(expression)) {
     errorInput.style.display = "block";
     input.style.border = "3px solid #f46363";
   } else {
@@ -49,13 +55,15 @@ function shortLink(link) {
     shortLink.appendChild(shortUrl);
     shortLink.appendChild(buttonCopy);
     mainUrl.innerText = link;
-    shortUrl.innerText = res.data.result.short_link;
+    shortUrl.innerText = res.data.result.full_short_link;
     shortLinks.appendChild(boxShortLink);
     // todo: copy short link to clipboard
     buttonCopy.addEventListener("click", clipboardCopy);
     async function clipboardCopy() {
       let text = shortUrl.innerText;
       await navigator.clipboard.writeText(text);
+      buttonCopy.classList.add("copied");
+      buttonCopy.innerText = "Copied!";
     }
   });
 }

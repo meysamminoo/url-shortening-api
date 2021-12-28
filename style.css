@@ -47,9 +47,6 @@ input {
   outline: none;
   background-color: #fff;
 }
-input::placeholder {
-  opacity: 0.5;
-}
 ul,
 ol {
   list-style: none;
@@ -275,22 +272,42 @@ a {
   position: absolute;
   top: -7.8rem;
 }
-#input {
+.input {
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 3rem;
+  justify-content: center;
+  position: relative;
+}
+#input {
+  width: 100%;
   background-color: #fff;
   border-radius: 1rem;
   font-size: 2rem;
   line-height: 3.6rem;
   font-weight: 500;
   letter-spacing: 0.15px;
-  padding: 1rem 3rem;
-  margin-right: 3rem;
+  padding: 0.8rem 3rem;
+  border: 3px solid transparent;
+}
+#input::placeholder {
+  opacity: 0.5;
+}
+.input label {
+  position: absolute;
+  bottom: -3rem;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+  color: #f46363;
+  display: none;
 }
 #btn {
   width: 20%;
   background-color: var(--green);
   color: #fff;
-  padding: 1.3rem 0;
+  padding: 1.5rem 0;
   font-size: 2rem;
   line-height: 3rem;
   font-weight: 700;
@@ -573,10 +590,15 @@ a {
     flex-direction: column;
     top: -12rem;
   }
-  #input {
+  .input {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
+  }
+  .input label {
+    bottom: -2.5rem;
+  }
+  #input {
     font-size: 1.6rem;
     padding: 1rem 1.5rem;
   }

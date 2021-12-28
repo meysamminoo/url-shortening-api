@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -19,6 +18,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
   </head>
   <body>
@@ -67,32 +67,17 @@
     <main class="main">
       <div class="wrapper-main">
         <section class="box-input">
-          <input type="text" id="input" placeholder="Shorten a link here..." />
+          <div class="input">
+            <input
+              type="text"
+              id="input"
+              placeholder="Shorten a link here..."
+            />
+            <label> Please add a link</label>
+          </div>
           <button id="btn">Shorten It!</button>
         </section>
-        <section class="short-links">
-          <div class="box-short-link">
-            <p class="main-address">https://google.com/test/test</p>
-            <div class="short-link">
-              <p class="short-address">https://rel.ink/gxOX</p>
-              <button class="btn-copy">Copy</button>
-            </div>
-          </div>
-          <div class="box-short-link">
-            <p class="main-address">https://google.com/test/test</p>
-            <div class="short-link">
-              <p class="short-address">https://rel.ink/gxOX</p>
-              <button class="btn-copy">Copy</button>
-            </div>
-          </div>
-          <div class="box-short-link">
-            <p class="main-address">https://google.com/test/test</p>
-            <div class="short-link">
-              <p class="short-address">https://rel.ink/gxOX</p>
-              <button class="btn-copy">Copy</button>
-            </div>
-          </div>
-        </section>
+        <section class="short-links"></section>
         <section class="advanced-static">
           <h2>Advanced Statistics</h2>
           <p>

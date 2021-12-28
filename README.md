@@ -11,15 +11,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
+![](./screenshot.png)
 
 ### Links
 
 - Solution URL: [Solution URL](https://github.com/meysamminoo/url-shortening-api)
 - Live Site URL: [Live site URL](https://meysamminoo.github.io/url-shortening-api/)
-
-## My process
 
 ### Built with
 

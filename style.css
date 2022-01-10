@@ -66,6 +66,7 @@ a {
   font-size: 1.5rem;
   line-height: 2.2rem;
   margin: 2.5rem;
+  max-width: 144rem;
 }
 .logo {
   flex: 2;
@@ -123,7 +124,7 @@ a {
   font-size: 2.4rem;
   display: none;
 }
-.hemberger {
+.hamberger {
   width: 80%;
   height: 38rem;
   display: flex;
@@ -137,10 +138,14 @@ a {
   background-color: var(--primary-color);
   border-radius: 10px;
   padding: 4rem 3rem;
-  display: none;
+  display: flex;
   position: absolute;
   top: 8rem;
   transition: all 0.6s ease;
+  visibility: hidden;
+}
+.hamberger.active {
+  visibility: visible;
 }
 .hamberger-menu {
   width: 100%;
@@ -204,6 +209,8 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  max-width: 144rem;
+  background-image: none;
 }
 .title-started {
   width: 57rem;
@@ -252,6 +259,7 @@ a {
   align-items: center;
   margin: 0 auto;
   position: relative;
+  max-width: 144rem;
 }
 .box-input {
   width: 100%;
@@ -419,6 +427,9 @@ a {
   align-items: center;
   border-radius: 50%;
 }
+.box-item:hover .box-icon {
+  animation: move 0.5s infinite alternate-reverse;
+}
 .middle {
   margin-top: 8.8rem;
 }
@@ -486,6 +497,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  max-width: 144rem;
 }
 .logo-footer {
   flex: 3;
@@ -531,13 +543,47 @@ a {
   text-align: center;
   padding-top: 2rem;
   color: #fff;
+  max-width: 144rem;
 }
 .attribution a {
   color: var(--green);
   text-decoration: underline;
 }
-
+@media screen and (min-width: 1440px) {
+  .started {
+    background-image: none;
+    margin-top: 0;
+  }
+  .wrapper-started {
+    background-image: url(./images/illustration-working.svg);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 40%;
+    padding: 7rem 0;
+  }
+  .hamberger.active {
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .hamberger.active {
+    visibility: hidden;
+  }
+}
 @media screen and (max-width: 1350px) {
+  .started {
+    background-position: top center;
+    background-size: 55%;
+  }
+  .wrapper-started {
+    margin-top: 42rem;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 6.5rem;
+  }
+  .hamberger.active {
+    visibility: hidden;
+  }
   .box-item {
     width: 27rem;
     height: 25rem;
@@ -554,6 +600,9 @@ a {
   .box-button {
     display: none;
   }
+  .hamberger.active {
+    visibility: visible;
+  }
   .hamberger-icon {
     display: block;
   }
@@ -561,14 +610,10 @@ a {
     display: block;
   }
   .started {
-    background-position: top center;
-    background-size: 100%;
+    background-size: 40%;
   }
   .wrapper-started {
-    margin-top: 32rem;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 6.5rem;
+    margin-top: 25rem;
   }
   .title-started,
   .text-started {
@@ -605,12 +650,15 @@ a {
     line-height: 2.7rem;
   }
   .short-links {
-    margin-top: 16rem;
+    margin-top: 17rem;
   }
   .box-short-link {
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
+  }
+  .box-short-link > p {
+    padding: 1rem 2.5rem 0 2.5rem;
   }
   .main-address {
     width: 100%;
@@ -697,5 +745,23 @@ a {
   }
   .attribution {
     font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .started {
+    background-size: 70%;
+  }
+  .wrapper-started {
+    margin-top: 25rem;
+  }
+}
+
+/* Animations */
+@keyframes move {
+  0% {
+    top: -3rem;
+  }
+  100% {
+    top: -4.4rem;
   }
 }

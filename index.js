@@ -1,7 +1,8 @@
 //* Selectors
+const body = document.querySelector("body").style.width;
 const nav = document.querySelector(".nav");
 const boxButton = document.querySelector(".box-button");
-const hamberger = document.querySelector(".hemberger");
+const hamberger = document.querySelector(".hamberger");
 const hambergerIcon = document.querySelector(".fa-bars");
 const input = document.getElementById("input");
 const btn = document.getElementById("btn");
@@ -10,16 +11,17 @@ const shortLinks = document.querySelector(".short-links");
 
 //* Event listener
 let check = true;
+console.log(document.body.clientWidth);
+console.log(window.innerWidth);
 hambergerIcon.addEventListener("click", function () {
   if (check) {
-    hamberger.style.display = "flex";
+    hamberger.classList.add("active");
     check = false;
   } else {
-    hamberger.style.display = "none";
+    hamberger.classList.remove("active");
     check = true;
   }
 });
-
 btn.addEventListener("click", function () {
   var expression =
     /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;

@@ -1,4 +1,5 @@
 //* Selectors
+const body = document.querySelector("body");
 const nav = document.querySelector(".nav");
 const boxButton = document.querySelector(".box-button");
 const hamberger = document.querySelector(".hemberger");
@@ -12,10 +13,10 @@ const shortLinks = document.querySelector(".short-links");
 let check = true;
 hambergerIcon.addEventListener("click", function () {
   if (check) {
-    hamberger.style.display = "flex";
+    hamberger.classList.add("active");
     check = false;
   } else {
-    hamberger.style.display = "none";
+    hamberger.classList.remove("active");
     check = true;
   }
 });

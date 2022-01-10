@@ -124,7 +124,7 @@ a {
   font-size: 2.4rem;
   display: none;
 }
-.hemberger {
+.hamberger {
   width: 80%;
   height: 38rem;
   display: flex;
@@ -143,7 +143,7 @@ a {
   top: 8rem;
   transition: all 0.6s ease;
 }
-.hemberger.active {
+.hamberger.active {
   display: flex;
 }
 .hamberger-menu {
@@ -560,6 +560,14 @@ a {
     background-size: 40%;
     padding: 7rem 0;
   }
+  .hamberger.active {
+    display: none;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .hamberger.active {
+    display: none;
+  }
 }
 @media screen and (max-width: 1350px) {
   .started {
@@ -571,6 +579,9 @@ a {
     text-align: center;
     align-items: center;
     margin-bottom: 6.5rem;
+  }
+  .hamberger.active {
+    display: none;
   }
   .box-item {
     width: 27rem;
@@ -587,6 +598,9 @@ a {
   }
   .box-button {
     display: none;
+  }
+  .hamberger.active {
+    display: flex;
   }
   .hamberger-icon {
     display: block;

@@ -550,7 +550,8 @@ a {
   .wrapper-started {
     background-image: url(./images/illustration-working.svg);
     background-repeat: no-repeat;
-    background-position: 125%;
+    background-position: 100%;
+    background-size: 40%;
     padding: 7rem 0;
   }
 }
@@ -628,12 +629,15 @@ a {
     line-height: 2.7rem;
   }
   .short-links {
-    margin-top: 16rem;
+    margin-top: 17rem;
   }
   .box-short-link {
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
+  }
+  .box-short-link > p {
+    padding: 1rem 2.5rem 0 2.5rem;
   }
   .main-address {
     width: 100%;

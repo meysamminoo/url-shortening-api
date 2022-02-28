@@ -11,8 +11,6 @@ const shortLinks = document.querySelector(".short-links");
 
 //* Event listener
 let check = true;
-console.log(document.body.clientWidth);
-console.log(window.innerWidth);
 hambergerIcon.addEventListener("click", function () {
   if (check) {
     hamberger.classList.add("active");
